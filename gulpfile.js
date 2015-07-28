@@ -68,6 +68,11 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(config.dest + config.outputCSSDir));
 });
 
+gulp.task('copy-bootstrap-fonts', function() {
+    return gulp.src(config.bootStrapFonts)
+        .pipe(gulp.dest(config.dest + config.outputCSSFontDir));
+});
+
 gulp.task('watch', function() {
     gulp.watch([config.allTypeScript], ['ts-lint', 'compile-ts']);
     gulp.watch([config.allLess], ['styles']);
@@ -84,7 +89,7 @@ gulp.task('default', function () {
         'clean',
         'ts-lint',
         'compile-ts',
-        ['copy-html', 'copy-lib', 'styles'],
+        ['copy-html', 'copy-lib', 'styles', 'copy-bootstrap-fonts'],
         'watch',
         'local'
     )

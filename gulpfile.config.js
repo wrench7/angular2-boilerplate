@@ -8,7 +8,9 @@ var GulpConfig = (function () {
         this.typingsDir = './typings';
 
         this.outputFile = 'angular2-boilerplate';
+        this.bootStrapFonts = './bower_components/bootstrap/fonts/*.*';
         this.outputCSSDir = '/css';
+        this.outputCSSFontDir = '/fonts';
         this.outputLibDir = '/lib';
 
         this.mainLessFile = this.webappSrc + '/assets/styles/main.less';
